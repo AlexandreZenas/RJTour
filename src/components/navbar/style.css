@@ -1,0 +1,19 @@
+/* Header */
+header#header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+    position: fixed;
+    width: 96vw;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  #header > span{
+    font-weight: 300;
+    animation: text-focus-in 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+  /* .Burguer{
+    width: 20px;
+    color: white ;
+    border: white;
+  } */

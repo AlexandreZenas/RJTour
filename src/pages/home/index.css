@@ -1,0 +1,93 @@
+@import url(../../components/slider-navegation/index.css);
+
+#bodyPage{
+  animation: entre 0.5s ease-out 1s both;
+}
+/* Home Main */
+section.mainBanner{
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* All pages */
+div.pages{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+/* background-image banners*/
+div#sliderPage-1{background-image: url(/images/DeLuxeBackground-01.jpg);}
+div#sliderPage-2{background-image: url(/images/DeLuxeBackground-02.jpg);}
+div#sliderPage-3{background-image: url(/images/DeLuxeBackground-03.jpg);}
+div#sliderPage-4{background-image: url(/images/DeLuxeBackground-04.jpg);}
+div#sliderPage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
+/* content */
+  .pages div.containerContent{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-weight:100;
+  }
+    .containerContent h1{
+      margin: 5% 0;
+      font-size: 3.5rem;
+      font-weight:100;
+      letter-spacing: 0.3em;
+      transform: scaleY(1.15);
+      font-style: oblique;
+      overflow: hidden;
+    }
+    .containerContent a{
+      text-decoration: none;
+      color: white;
+    }
+    .containerContent a:hover{
+      color: rgb(163, 163, 163);
+    }
+  /* Span Animations */
+  span.animationSpan{
+    animation: animationSpan 1s ease-in-out 1s both;
+    animation-direction: alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+    span.spanPageUp{
+      animation: spanPageUp 1s ease-in-out 0s both;
+      animation-direction: reverse;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  /* page Up animation */
+  div.visibilityPage{
+    top:0vh;
+    transition: 0s;
+    animation: bgImageAnimation 1.5s ease-in-out reverse both;
+  }
+  div.animationPageUp{
+    /* z-index: 5; */
+    top: -101vh;   
+    transition: 1s; 
+    z-index: 6;
+  }
+  .textAnimation {
+    animation: text-focus-in  2.2s ease-in-out 1.5s both;
+    opacity: 0;
+    font-size: 0rem;
+    z-index: 7;
+  }
