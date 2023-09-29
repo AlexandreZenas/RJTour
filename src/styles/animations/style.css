@@ -1,0 +1,111 @@
+/* text */
+@keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+/* Título principal */
+@keyframes textTitle {
+    1% {
+      letter-spacing: -0.04em;
+      transform: translatey(-20px);
+      opacity: 0;
+      font-size: 0rem;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+      font-size: 3rem;
+    }
+  }
+/* span */
+@keyframes animationSpan {
+  0%{
+    border-top: 1px solid white;
+    width: 0px;
+    height: 1px;
+    overflow: hidden;
+  }
+  50%{
+    overflow: hidden;
+    border-top: 1px solid white;
+    width: 350px;
+    height: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    background-color: rgba(0,0,0,0.2);
+  }
+  100%{
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 350px;
+    height: 70px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}
+@keyframes spanPageUp {
+  0%{
+    border-top: 1px solid white;
+    width: 0px;
+    height: 1px;
+    overflow: hidden;
+  }
+  50%{
+    overflow: hidden;
+    border-top: 1px solid white;
+    width: 350px;
+    height: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    background-color: rgba(0,0,0,0.2);
+  }
+  100%{
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 350px;
+    height: 70px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}
+/* background Image Animation */
+  @keyframes bgImageAnimation {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 16%;
+      }
+      100% {
+        transform: scale(1.25) translateY(-15px);
+        transform-origin: top;
+      }
+    }
+/* Entraces */
+@keyframes entre {
+    0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    background-size: cover;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

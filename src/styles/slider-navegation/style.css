@@ -1,0 +1,41 @@
+  /*sliderNavegation*/
+  nav.sliderNavegation{
+    position: fixed;
+    top: calc(50% - (272px / 2));
+    right: 20px;
+    z-index: 10;
+    margin: 0 2%;
+  }
+  .sliderNavegation ol.numbersOl{
+    padding: 0;
+    margin: 0;
+    list-style-type:none;
+    text-align: -webkit-right;
+  }
+  .numbersOl li{
+    margin: 0;
+    font-size: .8rem;
+    padding: 20px 0;
+    width: 25px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .numbersOl li::after{
+    position: absolute;
+    background-color: #fff;
+    width: 10px;
+    height: 1px;
+    right: 0;
+    margin-left: 5px;
+    content: '';
+  }
+  .numbersOl li.activeSlide{
+    padding-right: 20px;
+    transition: 1s;
+  }
+  .numbersOl li.activeSlide::after{
+    width: 30px;
+    transition: 1s;
+  }

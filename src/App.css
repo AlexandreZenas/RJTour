@@ -1,0 +1,104 @@
+@import url(./styles/slider-navegation/style.css);
+@import url(./styles/animations/style.css);
+@import url(./styles/keyframes/style.css);
+@import url(./styles/header/style.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-family: 'EncorpadaClassicCond-Regular';    
+}
+body{
+    text-align: center;
+    background-color: #282c34;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+#bodyPage{
+  animation: entre 0.5s ease-out 1s both;
+}
+/* Home Main */
+  main.homeMain{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+/* All Pages */
+section.sliderPages{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+/* background-image banners*/
+section#sliderPage-1{background-image: url(../public/images/DeLuxeBackground-01.jpg);}
+section#sliderPage-2{background-image: url(../public/images/DeLuxeBackground-02.jpg);}
+section#sliderPage-3{background-image: url(../public/images/DeLuxeBackground-03.jpg);}
+section#sliderPage-4{background-image: url(../public/images/DeLuxeBackground-04.jpg);}
+section#sliderPage-5{background-image: url(../public/images/DeLuxeBackground-05.jpg);}
+
+.sliderPages div.containerContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight:100;
+    }
+    .containerContent h1{
+      margin: 5% 0;
+      font-size: 3.5rem;
+      font-weight:100;
+      letter-spacing: 0.3em;
+      transform: scaleY(1.15);
+      font-style: oblique;
+      overflow: hidden;
+    }
+    .containerContent a{
+      text-decoration: none;
+      color: white;
+    }
+    .containerContent a:hover{
+      color: rgb(163, 163, 163);
+    }
+    /* Span Animations */
+    span.animationSpan{
+      animation: animationSpan 1s ease-in-out 1s both;
+      animation-direction: alternate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    span.spanPageUp{
+      animation: spanPageUp 1s ease-in-out 0s both;
+      animation-direction: reverse;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  /* page Up animation */
+  section.sliderShow{
+    top:0vh;
+    transition: 0s;
+    animation: bgImageAnimation 1.5s ease-in-out reverse both;
+  }
+  section.sliderUp{
+    /* z-index: 5; */
+    top: -101vh;   
+    transition: 1s; 
+    z-index: 6;
+  }
