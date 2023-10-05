@@ -1,75 +1,49 @@
-  const sliderPages = document.querySelectorAll('.sliderPages');
-  const containerContentSpans = document.querySelectorAll('.containerContent > a > span');
-  const sliderNavegationLi = document.querySelectorAll('.numbersOl > li'); 
-  //arrays
-  const sliderPagesArray = Array.from(sliderPages);  
-  const containerContentSpansArray = Array.from(containerContentSpans);
-  const sliderNavegationLiArray = Array.from(sliderNavegationLi);
+//arrays
+const sliderPagesArray = Array.from(document.querySelectorAll('.sliderPages'));  
+const containerContentSpansArray = Array.from(document.querySelectorAll('.containerContent > a > span'));
+const sliderNavegationLiArray = Array.from(document.querySelectorAll('.numbersOl > li'));
 
-  const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegationLiArray]
+const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegationLiArray]
 
   for(let i = 0; i < sliderPagesArray.length; i++){
 
-    sliderPagesArray[i].addEventListener('wheel', (event) => {
-        var y = event.deltaY;
-        
-        if( y > 0 && i < 4){     
-          //adiciona e remove as classes posteriores  
-          arrayTest.forEach((item) => {
-            item[i+1].classList.add('showElement');
-            item[i+1].classList.remove('mouseScrolled');
-            item[i].classList.add('mouseScrolled');
-            item[i].classList.remove('showElement');
-            if(i  > 0){
-              item[i-1].classList.remove('mouseScrolled')
-            } 
-          })     
-        }
-        else if (y < 0 && i <= 4){
-          //adiciona e remove as classes anteriores
-          arrayTest.forEach((item) => {
-            if( i > 0){
-              item[i-1].classList.add('showElement');
-            }
-            item[i-1].classList.remove('mouseScrolled');
-            item[i].classList.add('mouseScrolled');
-            item[i].classList.remove('showElement');
-            if(i < 4){
-              item[i+1].classList.remove('mouseScrolled');
-            }
-          })
-        }
-    });
-    //evento de Click no nav menu
-    sliderNavegationLiArray[i].addEventListener('click', (event) => {
-      sliderPagesArray.forEach((item, index) => {
-        item.classList.add("mouseScrolled");
-        item.classList.remove("showElement");
-      });
-      sliderPagesArray[i].classList.remove('mouseScrolled');
-      sliderPagesArray[i].classList.add('showElement');
-      // removendo o showElement de toda as li e adicionando na que foi clicada.
-      sliderNavegationLiArray.forEach((item, index) => {
-        item.classList.remove('showElement')
-      });
-      sliderNavegationLiArray[i].classList.add('showElement');
+  const scrollDown = () => {
+    arrayTest.forEach((item) => {
+      item[i+1].classList.add('showElement');
+      item[i+1].classList.remove('mouseScrolled');
+      item[i].classList.add('mouseScrolled');
+      item[i].classList.remove('showElement');
+      if(i  > 0){item[i-1].classList.remove('mouseScrolled')} 
+    })  
+  }
+  const scrollUp = () => {
+    arrayTest.forEach((item) => {
+      if( i > 0){item[i-1].classList.add('showElement');}
+      item[i-1].classList.remove('mouseScrolled');
+      item[i].classList.add('mouseScrolled');
+      item[i].classList.remove('showElement');
+      if(i < 4){item[i+1].classList.remove('mouseScrolled');}
+    })
+  }
+  //scroll
+  sliderPagesArray[i].addEventListener('wheel', (event) => {
+      var y = event.deltaY;
+      
+      if( y > 0 && i < 4){     
+        scrollDown(i)
+      }
+      else if (y < 0  && i > 0){
+        scrollUp(i)
+      }
+  });
+  //touch
+  var touchY;
+  sliderPagesArray[i].addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    var y = event.changedTouches[0];
+    touchY = y.pageY;
 
-      //Mesma lógica do sliderPagesArray
-      containerContentSpansArray.forEach((item, index) => {
-        item.classList.add('mouseScrolled');
-        item.classList.remove('showElement');
-      })
-      containerContentSpansArray[i].classList.remove('mouseScrolled');
-      containerContentSpansArray[i].classList.add('showElement');
-    });
-
-    var touchY;
-    sliderPagesArray[i].addEventListener('touchstart', (event) => {
-      event.preventDefault();
-      var y = event.changedTouches[0];
-      touchY = y.pageY;
-
-  }, false);
+}, false);
   sliderPagesArray[i].addEventListener('touchend', (event) => {
     event.preventDefault();
     var y = event.changedTouches[0];
@@ -79,24 +53,49 @@
       //adiciona e remove as classes posteriores
       scrollDown(i) 
     }
-    else if (directionY >  0 && i <= 4){
-      //adiciona e remove as classes anteriores
-      sliderNavegationLiArray[i-1].classList.add('showElement')
-      sliderPagesArray[i-1].classList.add('showElement');
-      sliderPagesArray[i-1].classList.remove('mouseScrolled');
-      containerContentSpansArray[i-1].classList.add('showElement');
-      containerContentSpansArray[i-1].classList.remove('mouseScrolled');
-
-      //adiciona e remove as classes atuais
-      sliderPagesArray[i].classList.remove('showElement');
-      sliderPagesArray[i].classList.add('mouseScrolled');
-      sliderNavegationLiArray[i].classList.remove('showElement');
-      containerContentSpansArray[i].classList.remove('showElement');
-      containerContentSpansArray[i].classList.add('mouseScrolled');
-
-      //remove as classes posteriores
-      sliderPagesArray[i+1].classList.remove('mouseScrolled');  
-      containerContentSpansArray[i+1].classList.remove('mouseScrolled');      
+    else if (directionY > 0 && i > 0){
+      scrollUp(i)   
     }
-}, false);
+  }, false);
+
+  //click
+
+  // remove 
+  sliderNavegationLiArray[i].addEventListener('click', (event) => {
+    // console.log(sliderNavegationLiArray[i])
+    // console.log(i)
+    console.log(arrayTest)
+    arrayTest.forEach((item, index) => {
+      item[''].classList.add("mouseScrolled");
+      item[i].classList.add("showElement");
+      console.log(item)
+      // item.classList.add("mouseScrolled");
+      // item[i].classList.add("showElement");
+    })
+    // if( i < 4){     
+    //   scrollDown(i)
+    // }
+    // else if (i > 0){
+    //   scrollUp(i)
+    // }
+    // sliderPagesArray.forEach((item, index) => {
+    //   item.classList.add("mouseScrolled");
+    //   item.classList.remove("showElement");
+    // });
+    // sliderNavegationLiArray.forEach((item, index) => {
+    //   item.classList.remove('showElement')
+
+    // });
+    // containerContentSpansArray.forEach((item, index) => {
+    //   item.classList.add('mouseScrolled');
+    //   item.classList.remove('showElement');
+    // });
+    // sliderPagesArray[i].classList.remove('mouseScrolled');
+    // sliderPagesArray[i].classList.add('showElement');
+    // sliderNavegationLiArray[i].classList.add('showElement');
+    // containerContentSpansArray[i].classList.remove('mouseScrolled');
+    // containerContentSpansArray[i].classList.add('showElement'); 
+
+  });
   }
+  
