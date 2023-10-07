@@ -51,45 +51,6 @@ const arrayTest = [sliderPagesArray, sliderSpansArray, navegationLiArray]
   },false);
 
   //click
-<<<<<<< HEAD
-
-  // remove 
-  sliderNavegationLiArray[i].addEventListener('click', (event) => {
-    // console.log(sliderNavegationLiArray[i])
-    // console.log(i)
-    // console.log(arrayTest)
-    // arrayTest.forEach((item, index) => {
-    //   item[''].classList.add("mouseScrolled");
-    //   item[i].classList.add("showElement");
-    //   console.log(item)
-    //   // item.classList.add("mouseScrolled");
-    //   // item[i].classList.add("showElement");
-    // })
-    // if( i < 4){     
-    //   scrollDown(i)
-    // }
-    // else if (i > 0){
-    //   scrollUp(i)
-    // }
-    sliderPagesArray.forEach((item, index) => {
-      item.classList.add("mouseScrolled");
-      item.classList.remove("showElement");
-    });
-    sliderNavegationLiArray.forEach((item, index) => {
-      item.classList.remove('showElement')
-
-    });
-    containerContentSpansArray.forEach((item, index) => {
-      item.classList.add('mouseScrolled');
-      item.classList.remove('showElement');
-    });
-    sliderPagesArray[i].classList.remove('mouseScrolled');
-    sliderPagesArray[i].classList.add('showElement');
-    sliderNavegationLiArray[i].classList.add('showElement');
-    containerContentSpansArray[i].classList.remove('mouseScrolled');
-    containerContentSpansArray[i].classList.add('showElement'); 
-
-=======
   navegationLiArray[i].addEventListener('click', () => {
     arrayTest.map((object) => {
       object.forEach((item) => {
@@ -101,6 +62,5 @@ const arrayTest = [sliderPagesArray, sliderSpansArray, navegationLiArray]
     object[i].classList.remove('mouseScrolled');
     object[i].classList.add('showElement');
     });
->>>>>>> de5eb1923b4d6c51ef6cbf2e826679173eb1ba00
   });
 }  
