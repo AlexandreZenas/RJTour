@@ -9,6 +9,8 @@ header.navbar{
   }
   .navbar > span{
     font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 10px;
     animation: text-focus-in 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   }
   .Burguer{
