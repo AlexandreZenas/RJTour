@@ -1,19 +1,18 @@
 //arrays
 const sliderPagesArray = Array.from(document.querySelectorAll('.sliderPages'));  
-const containerContentSpansArray = Array.from(document.querySelectorAll('.containerContent > a > span'));
-const sliderNavegationLiArray = Array.from(document.querySelectorAll('.numbersOl > li'));
+const sliderSpansArray = Array.from(document.querySelectorAll('.containerContent > a > span'));
+const navegationLiArray = Array.from(document.querySelectorAll('.numbersOl > li'));
 
-const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegationLiArray]
+const arrayTest = [sliderPagesArray, sliderSpansArray, navegationLiArray]
 
   for(let i = 0; i < sliderPagesArray.length; i++){
-
   const scrollDown = () => {
     arrayTest.forEach((item) => {
       item[i+1].classList.add('showElement');
       item[i+1].classList.remove('mouseScrolled');
       item[i].classList.add('mouseScrolled');
       item[i].classList.remove('showElement');
-      if(i  > 0){item[i-1].classList.remove('mouseScrolled')} 
+      if(i > 0){item[i-1].classList.remove('mouseScrolled')} 
     })  
   }
   const scrollUp = () => {
@@ -29,15 +28,13 @@ const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegatio
   sliderPagesArray[i].addEventListener('wheel', (event) => {
       var y = event.deltaY;
       
-      if( y > 0 && i < 4){     
-        scrollDown(i)
-      }
-      else if (y < 0  && i > 0){
-        scrollUp(i)
-      }
+      if( y > 0 && i < 4){scrollDown(i)}
+      else if (y < 0  && i > 0){scrollUp(i)}
   });
+
   //touch
   var touchY;
+
   sliderPagesArray[i].addEventListener('touchstart', (event) => {
     event.preventDefault();
     var y = event.changedTouches[0];
@@ -49,16 +46,12 @@ const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegatio
     var y = event.changedTouches[0];
     directionY = y.pageY - touchY;
     
-    if( directionY < 0 && i < 4 ){     
-      //adiciona e remove as classes posteriores
-      scrollDown(i) 
-    }
-    else if (directionY > 0 && i > 0){
-      scrollUp(i)   
-    }
-  }, false);
+    if( directionY < 0 && i < 4 ){scrollDown(i)}
+    else if (directionY > 0 && i > 0){scrollUp(i)}
+  },false);
 
   //click
+<<<<<<< HEAD
 
   // remove 
   sliderNavegationLiArray[i].addEventListener('click', (event) => {
@@ -96,6 +89,18 @@ const arrayTest = [sliderPagesArray, containerContentSpansArray, sliderNavegatio
     containerContentSpansArray[i].classList.remove('mouseScrolled');
     containerContentSpansArray[i].classList.add('showElement'); 
 
+=======
+  navegationLiArray[i].addEventListener('click', () => {
+    arrayTest.map((object) => {
+      object.forEach((item) => {
+        // console.log(item)
+        item.classList.add("mouseScrolled");
+        item.classList.remove("showElement");
+      });
+    //manipulando os elementos de acordo com o indice [i] dentro de cada objeto
+    object[i].classList.remove('mouseScrolled');
+    object[i].classList.add('showElement');
+    });
+>>>>>>> de5eb1923b4d6c51ef6cbf2e826679173eb1ba00
   });
-  }
-  
+}  

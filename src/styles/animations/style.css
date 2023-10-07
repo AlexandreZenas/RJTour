@@ -5,7 +5,7 @@ section.showElement{
 }
 section.mouseScrolled{
   top: -101vh;   
-  transition: 1s; 
+  transition: .750s; 
   z-index: 6;
 }
 /* Span Animations */
