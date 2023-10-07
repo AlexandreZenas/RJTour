@@ -44,11 +44,11 @@ section.sliderPages{
     background-repeat: no-repeat;
     }
 /* background-image banners*/
-section#sliderPage-1{background-image: url(../public/images/DeLuxeBackground-01.jpg);}
-section#sliderPage-2{background-image: url(../public/images/DeLuxeBackground-02.jpg);}
-section#sliderPage-3{background-image: url(../public/images/DeLuxeBackground-03.jpg);}
-section#sliderPage-4{background-image: url(../public/images/DeLuxeBackground-04.jpg);}
-section#sliderPage-5{background-image: url(../public/images/DeLuxeBackground-05.jpg);}
+section#sliderPage-1{background-image: url(../public/images/RioDeJaneiro-bg-slide.jpg);}
+section#sliderPage-2{background-image: url(../public/images/pontosTuristicos-bg-slide.jpg);}
+section#sliderPage-3{background-image: url(../public/images/praia-bg-slide.jpg);}
+section#sliderPage-4{background-image: url(../public/images/trilha-bg-slide.jpg);}
+section#sliderPage-5{background-image: url(../public/images/Cachoeira-bg-slide.jpg);}
 
 .sliderPages div.containerContent{
     width: 100%;
