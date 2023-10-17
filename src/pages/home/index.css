@@ -11,8 +11,8 @@ section.mainBanner{
   height: 100vh;
   overflow: hidden;
 }
-/* All pages */
-div.pages{
+/* All slidePages */
+div.slidePages{
   height: 100vh;
   width: 100%;
   position: absolute;
@@ -27,13 +27,13 @@ div.pages{
   background-repeat: no-repeat;
   }
 /* background-image banners*/
-div#sliderPage-1{background-image: url(/images/DeLuxeBackground-01.jpg);}
-div#sliderPage-2{background-image: url(/images/DeLuxeBackground-02.jpg);}
-div#sliderPage-3{background-image: url(/images/DeLuxeBackground-03.jpg);}
-div#sliderPage-4{background-image: url(/images/DeLuxeBackground-04.jpg);}
-div#sliderPage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
+div.slidePage-1{background-image: url(/images/DeLuxeBackground-01.jpg);}
+div.slidePage-2{background-image: url(/images/DeLuxeBackground-02.jpg);}
+div.slidePage-3{background-image: url(/images/DeLuxeBackground-03.jpg);}
+div.slidePage-4{background-image: url(/images/DeLuxeBackground-04.jpg);}
+div.slidePage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
 /* content */
-  .pages div.containerContent{
+  .slidePages div.containerContent{
       width: 100%;
       display: flex;
       align-items: center;
@@ -49,6 +49,9 @@ div#sliderPage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
       font-style: oblique;
       overflow: hidden;
     }
+    .containerContent h1.mainTitleSlider {
+      animation: text-focus-in  2.2s ease-in-out 1.5s both;
+    } 
     .containerContent a{
       text-decoration: none;
       color: white;
@@ -56,38 +59,5 @@ div#sliderPage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
     .containerContent a:hover{
       color: rgb(163, 163, 163);
     }
-  /* Span Animations */
-  span.animationSpan{
-    animation: animationSpan 1s ease-in-out 1s both;
-    animation-direction: alternate;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-    span.spanPageUp{
-      animation: spanPageUp 1s ease-in-out 0s both;
-      animation-direction: reverse;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-  /* page Up animation */
-  div.visibilityPage{
-    top:0vh;
-    transition: 0s;
-    animation: bgImageAnimation 1.5s ease-in-out reverse both;
-  }
-  div.animationPageUp{
-    /* z-index: 5; */
-    top: -101vh;   
-    transition: 1s; 
-    z-index: 6;
-  }
-  .textAnimation {
-    animation: text-focus-in  2.2s ease-in-out 1.5s both;
-    opacity: 0;
-    font-size: 0rem;
-    z-index: 7;
-  }
+
+

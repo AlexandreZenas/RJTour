@@ -6,13 +6,13 @@
     z-index: 10;
     margin: 0 2%;
   }
-  .sliderNavegation ol.NumbersOl{
+  .sliderNavegation ol.numbersOl{
     padding: 0;
     margin: 0;
     list-style-type:none;
     text-align: -webkit-right;
   }
-  .NumbersOl li{
+  .numbersOl li{
     margin: 0;
     font-size: .8rem;
     padding: 20px 0;
@@ -22,7 +22,7 @@
     align-items: center;
     cursor: pointer;
   }
-  .NumbersOl li::after{
+  .numbersOl li::after{
     position: absolute;
     background-color: #fff;
     width: 10px;
@@ -31,11 +31,11 @@
     margin-left: 5px;
     content: '';
   }
-  .NumbersOl li.activeSlide{
+  /* .NumbersOl li.showElement{
     padding-right: 20px;
     transition: 1s;
   }
-  .NumbersOl li.activeSlide::after{
+  .NumbersOl li.showElement::after{
     width: 30px;
     transition: 1s;
-  }
+  } */
