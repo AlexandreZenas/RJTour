@@ -1,4 +1,41 @@
-/* text */
+/* slides animations */
+div.showElement{
+  top:0vh;
+  transition: 0s;
+  animation: bgImageAnimation 1.5s ease-in-out reverse both;
+}
+div.mouseScrolled{
+  top: -101vh;   
+  transition: .750s; 
+  z-index: 6;
+}
+/* Span Animations */
+span.showElement{
+  animation: animationSpan 1s ease-in-out 1s both;
+  animation-direction: alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+span.mouseScrolled{
+  animation: spanPageUp 1s ease-in-out 0s both;
+  animation-direction: reverse;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* slider navegation animations */
+.numbersOl li.showElement{
+  padding-right: 20px;
+  transition: 1s;
+}
+.numbersOl li.showElement::after{
+  width: 30px;
+  transition: 1s;
+}
+
 @keyframes text-focus-in {
     0% {
       filter: blur(12px);

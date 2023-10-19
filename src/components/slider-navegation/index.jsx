@@ -1,16 +1,19 @@
-import './index.css'
+import '../animations/index.css';
+import './index.css';
+import { forwardRef } from 'react';
 
-export default function SliderNavegation() {
-
+ const SliderNavegation = forwardRef((slider, navegationLi) =>  {
   return (
     <nav className='sliderNavegation'>
-        <ol className='NumbersOl'>
-            <li className="activeSlide">1<div className="textLine"></div></li>
-            <li>2<div className="textLine"></div></li>
-            <li>3<div className="textLine"></div></li>
-            <li>4<div className="textLine"></div></li>
-            <li>5<div className="textLine"></div></li>
+        <ol className='numbersOl' ref={navegationLi}>
+            <li className={`${slider.slider[0]}`} >1<div className="textLine"></div></li>
+            <li className={`${slider.slider[1]}`}>2<div className="textLine"></div></li>
+            <li className={`${slider.slider[2]}`}>3<div className="textLine"></div></li>
+            <li className={`${slider.slider[3]}`}>4<div className="textLine"></div></li>
+            <li className={`${slider.slider[4]}`}>5<div className="textLine"></div></li>
         </ol>
     </nav>
   )
-}
+});
+
+export default SliderNavegation;
