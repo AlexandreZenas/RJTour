@@ -27,11 +27,11 @@ div.slidePages{
   background-repeat: no-repeat;
   }
 /* background-image banners*/
-div.slidePage-1{background-image: url(/images/DeLuxeBackground-01.jpg);}
-div.slidePage-2{background-image: url(/images/DeLuxeBackground-02.jpg);}
-div.slidePage-3{background-image: url(/images/DeLuxeBackground-03.jpg);}
-div.slidePage-4{background-image: url(/images/DeLuxeBackground-04.jpg);}
-div.slidePage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
+div#slidePage-1{background-image: url(/images/DeLuxeBackground-01.jpg);}
+div#slidePage-2{background-image: url(/images/DeLuxeBackground-02.jpg);}
+div#slidePage-3{background-image: url(/images/DeLuxeBackground-03.jpg);}
+div#slidePage-4{background-image: url(/images/DeLuxeBackground-04.jpg);}
+div#slidePage-5{background-image: url(/images/DeLuxeBackground-05.jpg);}
 /* content */
   .slidePages div.containerContent{
       width: 100%;
